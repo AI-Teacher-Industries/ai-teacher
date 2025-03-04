@@ -70,7 +70,7 @@ const onLeave = (element: HTMLElement) => {
 
 .expand-enter-active,
 .expand-leave-active {
-  transition: height 300ms linear;
+  transition: height 300ms ease-in-out;
   overflow: hidden;
 }
 

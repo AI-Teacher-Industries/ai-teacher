@@ -16,7 +16,7 @@ const opened = ref(false);
       v-on:click="opened = !opened"
       class="p-2 text-left cursor-pointer w-full flex items-center justify-between"
     >
-      <div>
+      <div class="flex items-stretch gap-2">
         <div class="shrink-0 w-1 rounded-sm bg-button" />
         <div>
           {{ title }}

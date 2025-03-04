@@ -1,69 +1,42 @@
 <script setup lang="ts">
-const studyPlan = [
-  {
-    title: "Социальные основы маркетинга",
-    subtitle:
-      "Что такое маркетинг, как он работает, как проводить социальный опыт",
-    subThemes: [
-      {
-        title: "Как проводить социальный опыт",
-        subtitle:
-          "Что такое социальный опыт, как проводить социальный опыт, как он влияет на маркетинг",
-      },
-      {
-        title: "Как проводить социальный опыт",
-        subtitle:
-          "Что такое социальный опыт, как проводить социальный опыт, как он влияет на маркетинг",
-      },
-    ],
-  },
-  {
-    title: "Процесс управления маркетингом",
-    subtitle: "Как проводить социальный опыт, как он влияет на маркетинг",
-  },
-  {
-    title: "Системы маркетинговых исследований и маркетинговой информации",
-    subtitle: "Как проводить социальный опыт, как он влияет на маркетинг",
-  },
-  {
-    title: "Маркетинговая среда",
-    subtitle: "Как проводить социальный опыт, как он влияет на маркетинг",
-  },
+import { Plus } from 'lucide-vue-next';
+import Avatar from "vue-boring-avatars";
+
+const projects = [
+    {
+        id: '1',
+        title: 'Маркетинг'
+    },
+    {
+        id: '2',
+        title: 'Высшая математика'
+    },
+    {
+        id: '3',
+        title: 'Экономика'
+    }
 ];
 </script>
 
 <template>
-  <div class="flex items-start gap-4">
     <div class="w-full grow">
-      <h1 class="text-2xl">Маркетинг</h1>
-      <label
-        class="mt-4 flex flex-col justify-between w-full p-3 h-[148px] bg-section-bg rounded-xl"
-      >
-        <input
-          placeholder="Задайте любой вопрос по вашим материалам..."
-          class="text outline-0 placeholder:transition-opacity focus:placeholder:opacity-0"
-        />
-        <div>
-          <div
-            class="w-fit px-3 text-sm py-1 rounded-full bg-section-separator"
-          >
-            Chat GPT 4o
-          </div>
+        <h1 class="text-2xl">Your Projects</h1>
+        <div class="mt-10 grid grid-cols-6 gap-4">
+            <NuxtLink
+                v-for="project in projects"
+                :key="project.id"
+                :to="`/projects/${project.id}`"
+                class="w-full flex flex-col justify-between text-lg aspect-square bg-section-bg hover:bg-section-separator rounded-xl p-4 transition active:scale-[0.98]"
+            >
+                <Avatar :name="project.title" :size="48" variant="bauhaus" :colors='["#f3d915", "#e9e4bb", "#bfd4b7", "#a89907", "#1a1c27"]' class="size-12" />
+                {{ project.title }}
+            </NuxtLink>
+            <NuxtLink
+                href="/projects/create"
+                class="w-full text-lg aspect-square border-4 cursor-pointer border-section-bg border-dashed group hover:bg-section-separator hover:border-none rounded-xl p-4 transition active:scale-[0.98] flex items-center justify-center"
+            >
+                <Plus class="text-section-separator group-hover:text-section-bg size-12" :size="24" />
+            </NuxtLink>
         </div>
-      </label>
-      <div class="mt-4 shrink-0 bg-section-bg rounded-xl p-3">
-        <div class="text-lg">План обучения</div>
-        <PlanItem
-          v-for="plan in studyPlan"
-          :key="plan.title"
-          :title="plan.title"
-          :subtitle="plan.subtitle"
-          :subThemes="plan.subThemes"
-        />
-      </div>
     </div>
-    <div class="shrink-0 w-[320px] bg-section-bg rounded-xl p-3">
-      <div>Ваши материалы</div>
-    </div>
-  </div>
 </template>
