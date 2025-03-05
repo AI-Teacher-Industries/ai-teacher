@@ -4,9 +4,19 @@
     "dev": "bun run --hot src/index.ts"
   },
   "dependencies": {
-    "hono": "^4.7.2"
+    "@ai-sdk/openai": "^1.2.1",
+    "@mastra/core": "^0.4.4",
+    "@mastra/pg": "^0.1.7",
+    "@mastra/rag": "^0.1.7",
+    "drizzle-orm": "^0.40.0",
+    "hono": "^4.7.2",
+    "pg": "^8.13.3",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "@types/pg": "^8.11.11",
+    "drizzle-kit": "^0.30.5",
+    "mastra": "^0.2.9-alpha.4"
   }
 }
