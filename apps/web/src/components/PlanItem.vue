@@ -11,7 +11,7 @@ const opened = ref(false);
 </script>
 
 <template>
-  <div class="mt-2 gap-2 items-stretch bg-section-separator rounded-lg">
+  <div class="gap-2 items-stretch bg-section-separator rounded-lg">
     <button
       v-on:click="opened = !opened"
       class="p-2 text-left cursor-pointer w-full flex items-center justify-between"
