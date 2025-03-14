@@ -72,6 +72,7 @@ const studyPlan = [
       <CardHeader>
         <CardTitle>Materials</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>
+        <PDFItem />
       </CardHeader>
       <CardContent></CardContent>
       <CardFooter>
