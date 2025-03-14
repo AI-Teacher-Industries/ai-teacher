@@ -1,9 +1,9 @@
 <script setup lang="ts">
-useHead({
-  htmlAttrs: {
-    class: "dark",
-  },
-});
+// useHead({
+//   htmlAttrs: {
+//     class: "dark",
+//   },
+// });
 </script>
 
 <template>
