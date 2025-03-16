@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/registry/new-york/ui/button'
+import { buttonVariants } from '../button'
 import { AlertDialogAction, type AlertDialogActionProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
