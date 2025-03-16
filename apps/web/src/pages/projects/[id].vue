@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { PlusIcon } from "lucide-vue-next";
+import { ChevronLeftIcon, PlusIcon } from "lucide-vue-next";
 
 const studyPlan = [
   {
@@ -37,9 +37,14 @@ const studyPlan = [
 <template>
   <div class="flex items-start gap-4">
     <div class="w-full grow">
-      <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-        Marketing
-      </h3>
+      <div class="flex items-center gap-2">
+        <Button size="icon" variant="ghost">
+          <ChevronLeftIcon />
+        </Button>
+        <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
+          Marketing
+        </h3>
+      </div>
       <Card class="mt-4">
         <CardHeader
           ><input
@@ -70,14 +75,13 @@ const studyPlan = [
     </div>
     <Card class="w-[500px]">
       <CardHeader>
-        <CardTitle>Materials</CardTitle>
-        <CardDescription>Deploy your new project in one-click.</CardDescription>
+        <CardTitle>Library</CardTitle>
+        <CardDescription>Your materials</CardDescription>
       </CardHeader>
-      <CardContent></CardContent>
       <CardFooter>
         <Dialog>
-          <DialogTrigger as-child>
-            <Button class="w-full" variant="default"
+          <DialogTrigger asChild>
+            <Button class="w-full border-dashed" size="sm" variant="outline"
               ><PlusIcon /> Add material
             </Button>
           </DialogTrigger>

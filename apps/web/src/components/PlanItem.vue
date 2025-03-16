@@ -11,7 +11,7 @@ const opened = ref(false);
 </script>
 
 <template>
-  <div class="gap-2 items-stretch bg-section-separator rounded-lg">
+  <div class="gap-2 items-stretch bg-card border rounded-lg">
     <button
       v-on:click="opened = !opened"
       class="p-2 text-left cursor-pointer w-full flex items-center justify-between"
@@ -20,7 +20,7 @@ const opened = ref(false);
         <div class="shrink-0 w-1 rounded-sm bg-button" />
         <div>
           {{ title }}
-          <div class="text-subtitle-text text-sm opacity-75">
+          <div class="text-muted-foreground text-sm">
             {{ subtitle }}
           </div>
         </div>

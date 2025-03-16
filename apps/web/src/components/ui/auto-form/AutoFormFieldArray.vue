@@ -1,9 +1,9 @@
 <script setup lang="ts" generic="T extends z.ZodAny">
 import type { Config, ConfigItem } from './interface'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/registry/new-york/ui/accordion'
-import { Button } from '@/registry/new-york/ui/button'
-import { FormItem, FormMessage } from '@/registry/new-york/ui/form'
-import { Separator } from '@/registry/new-york/ui/separator'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../accordion'
+import { Button } from '../button'
+import { FormItem, FormMessage } from '../form'
+import { Separator } from '../separator'
 import { PlusIcon, TrashIcon } from 'lucide-vue-next'
 import { FieldArray, FieldContextKey, useField } from 'vee-validate'
 import { computed, provide } from 'vue'

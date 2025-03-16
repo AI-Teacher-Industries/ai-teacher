@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { cn } from '@/lib/utils'
-import { Skeleton } from '@/registry/new-york/ui/skeleton'
+import { Skeleton } from '../skeleton'
 import { computed, type HTMLAttributes } from 'vue'
 
 const props = defineProps<{
