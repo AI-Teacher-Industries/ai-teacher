@@ -1,6 +1,24 @@
 <template>
   <Sidebar>
-    <SidebarHeader><div class="px-2 text-2xl font-black">LOGO</div></SidebarHeader>
+    <SidebarHeader>
+      <Button
+        class="w-full justify-between border shadow-none"
+        variant="secondary"
+      >
+        <div class="flex items-center text-muted-foreground gap-2">
+          <SearchIcon />
+          Search
+        </div>
+        <div class="flex items-center gap-1">
+          <Kdb>
+            <span class="text-xs">⌘</span>
+          </Kdb>
+          <Kdb>
+            K
+          </Kdb>
+        </div>
+      </Button>
+    </SidebarHeader>
     <SidebarContent>
       <SidebarGroup>
         <SidebarGroupLabel>Platform</SidebarGroupLabel>
@@ -28,7 +46,10 @@
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem v-for="project in projects" :key="project.id">
-              <SidebarMenuButton asChild :isActive="project.id === $route.params.id">
+              <SidebarMenuButton
+                asChild
+                :isActive="project.id === $route.params.id"
+              >
                 <NuxtLink :to="`/projects/${project.id}`">
                   <BookIcon />
                   <span>{{ project.title }}</span>
@@ -36,11 +57,14 @@
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton class="border border-dashed flex justify-center" asChild>
-                  <button>
-                    <PlusIcon />
-                    <span>Add project</span>
-                  </button>
+              <SidebarMenuButton
+                class="border border-dashed flex justify-center"
+                asChild
+              >
+                <button>
+                  <PlusIcon />
+                  <span>Add project</span>
+                </button>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
@@ -117,6 +141,7 @@ import {
   PlusIcon,
   Settings,
   LifeBuoyIcon,
+  SearchIcon,
 } from "lucide-vue-next";
 import {
   Sidebar,
@@ -161,14 +186,18 @@ const items = [
   },
 ];
 
-const projects = [{
-  id: 'abc',
-  title: 'Medicine'
-}, {
-  id: 'def',
-  title: 'Economics'
-}, {
-  id: 'ghi',
-  title: 'AI'
-}];
+const projects = [
+  {
+    id: "abc",
+    title: "Medicine",
+  },
+  {
+    id: "def",
+    title: "Economics",
+  },
+  {
+    id: "ghi",
+    title: "AI",
+  },
+];
 </script>
