@@ -2,6 +2,7 @@
   <Sidebar>
     <SidebarHeader>
       <Button
+        @click="commandDialogProvider?.changeOpen(true)"
         class="w-full justify-between border shadow-none"
         variant="secondary"
       >
@@ -155,11 +156,16 @@ import {
 } from "@/components/ui/sidebar";
 import DropdownMenu from "./ui/dropdown-menu/DropdownMenu.vue";
 import Avatar from "./ui/avatar/Avatar.vue";
-import SidebarGroupAction from "./ui/sidebar/SidebarGroupAction.vue";
 import Badge from "./ui/badge/Badge.vue";
 import DropdownMenuSeparator from "./ui/dropdown-menu/DropdownMenuSeparator.vue";
 import SidebarHeader from "./ui/sidebar/SidebarHeader.vue";
 import { NuxtLink } from "#components";
+
+const commandDialogProvider = inject<{
+  open: boolean;
+  changeOpen: (value: boolean) => void;
+} | null>("commands-dialog", null);
+
 
 // Menu items.
 const items = [

@@ -1,11 +1,19 @@
 <script setup lang="ts">
 import AppSidebar from "~/components/AppSidebar.vue";
+import GlobalCommandsDialog from "~/components/GlobalCommandsDialog.vue";
 import SidebarProvider from "~/components/ui/sidebar/SidebarProvider.vue";
+import { provide } from 'vue'
 
 useHead({
   htmlAttrs: {
     class: "light",
   },
+});
+
+const commandsDialogOpened = ref(false);
+provide('commands-dialog', {
+  open: commandsDialogOpened,
+  changeOpen: (open: boolean) => commandsDialogOpened.value = open,
 });
 </script>
 
@@ -25,4 +33,5 @@ useHead({
       </div>
     </div>
   </SidebarProvider>
+  <GlobalCommandsDialog />
 </template>
